@@ -16,8 +16,7 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
   let mensaje = "";
   let condicion = false;
-  let validaremail =
-    /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+  let validaremail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
   if (!validaremail.test(email.value) ) {
     mensaje += `el correo  o la contraseña no son validos <br>`;
     condicion = true;
