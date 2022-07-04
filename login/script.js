@@ -4,9 +4,9 @@ const form = document.getElementById("form-login");
 const parrafo = document.getElementById("mensajeError");
 
 window.addEventListener("load", () => {
-  let sesion = localStorage.getItem("userLoggedIn");
+  let sesion = localStorage.getItem("usuariologeado");
   if (!sesion || sesion == undefined) {
-    localStorage.removeItem("userLoggedIn");
+    localStorage.removeItem("usuariologeado");
   } else {
     window.location.href = "../DashBoard/dash.html";
   }
@@ -25,10 +25,10 @@ form.addEventListener("submit", async (e) => {
     try {
       const data = await iniciarSesion();
       if (!data.error) {
-        localStorage.setItem("userLoggedIn", true);
+        localStorage.setItem("usuariologeado", true);
         window.location.href = "../DashBoard/dash.html";
       } else {
-        parrafo.innerHTML = data.mensaje;
+        parrafo.innerHTML = mensaje += `el correo  o la contraseña no son validos <br>`;
       }
     } catch (error) {
       console.error(error);
